@@ -1,0 +1,36 @@
+<!doctype html>
+  <head>
+    <title>Search Engine</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> 
+  </head>
+  <body>
+    <div class="card">
+      <h1>UC Irvine Search Engine</h1>
+      <div class="container">
+        <form action="" class="form" method="POST">
+          <div class="form__group">
+              {%if term%}
+                <input type="text" class="search" placeholder="Search..." id="search" required name="search">
+              {% else %}
+                <input type="text" class="search" placeholder="Search..." id="search" required name="search">
+              {% endif %}
+
+              <!-- <label for="search" class="form__label">Search</label> -->
+          </div>
+          <div class="form__group">
+              <button class="btn">Search</button>
+          </div>
+        </form>
+      </div>
+      {%if term%}
+        <div class="results">
+          <p class="results__og-query">Showing results for <strong>{{ term }}</strong> ({{ time }} seconds)</p>
+          {% for result in top_5 %}
+            <div class="result"><a href="{{result}}">{{ result }}</a></div>
+          {% endfor %}
+        </div>
+      {%endif%}
+    </div>
+    
+  </body>
+</html>

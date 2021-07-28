@@ -1,0 +1,28 @@
+<!doctype html>
+  <head>
+    <title>Search Engine | CS121 Assignment 3</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> 
+  </head>
+  <body>
+    <div class="card">
+      <h1>CS121 Assignment 3: Search Engine</h1>
+      <div class="container">
+        <form action="/query" class="form">
+          <div class="form__group">
+              <input type="text" class="search" placeholder="Enter query" id="search" required>
+              <!-- <label for="search" class="form__label">Search</label> -->
+          </div>
+          <div class="form__group">
+              <button class="btn">Search</button>
+          </div>
+        </form>
+
+        <div class="query_results">
+            <p>Some results.</p>
+        </div>
+
+      </div>
+    </div>
+    
+  </body>
+</html>
